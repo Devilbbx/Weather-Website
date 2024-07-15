@@ -1,16 +1,7 @@
-const url = 'https://weatherapi-com.p.rapidapi.com/current.json?q=53.1%2C-0.13';
-const options = {
-	method: 'GET',
-	headers: {
-		'x-rapidapi-key': '698dfdc2efmsh720de8f5788e17ap1c992ejsn165779378097',
-		'x-rapidapi-host': 'weatherapi-com.p.rapidapi.com'
-	}
-};
-
-try {
-	const response = await fetch(url, options);
-	const result = await response.text();
-	console.log(result);
-} catch (error) {
-	console.error(error);
-}
+const options = {method: 'GET',
+    headers: {accept: 'application/json'}};
+    
+    fetch('https://api.tomorrow.io/v4/weather/forecast?location=newyork&apikey=XXX', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
